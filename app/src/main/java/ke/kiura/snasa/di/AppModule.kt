@@ -7,6 +7,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import ke.kiura.snasa.SnasaApp
+import ke.kiura.snasa.util.EntityToImageMapper
 import javax.inject.Singleton
 
 @Module
@@ -14,13 +15,13 @@ import javax.inject.Singleton
 object AppModule {
     @Singleton
     @Provides
-    fun provideApp(@ApplicationContext app:Context):SnasaApp{
+    fun provideApp(@ApplicationContext app: Context): SnasaApp {
         return app as SnasaApp
     }
 
     @Singleton
     @Provides
-    fun provideContext(app: SnasaApp):Context{
+    fun provideContext(app: SnasaApp): Context {
         return app.applicationContext
     }
 }
